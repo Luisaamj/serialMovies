@@ -19,11 +19,12 @@ class MainController extends Controller
         return view('movies')
             ->with('movies',$movies);
     }
-
-    public function listPerson(){
+    public function listSeries(){
         $movies=Movie::all();
 
-        return view('movies')
+        return view('series')
             ->with('movies',$movies);
     }
+
+
 }

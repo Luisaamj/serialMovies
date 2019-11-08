@@ -17,6 +17,21 @@
 Route::get('/', 'MainController@index')->name('index');
 
 Route::get('/listMovies','MainController@listMovies')->name('listMovies');
+Route::get('/listSeries','MainController@listSeries')->name('listSeries');
+
+Route::get('/insertMovie','MainController@formMovies')->name('insertFormMovie');
+Route::post('/insertMovie','MainController@insertMovie')->name('insertMovie');
+
+Route::get('/insertMovie','MainController@formMovies')->name('insertFormMovie');
+Route::post('/insertMovie','MainController@insertMovie')->name('insertMovie');
+
+Route::get('/insertMovie','MainController@formMovies')->name('insertFormMovie');
+Route::post('/insertMovie','MainController@insertMovie')->name('insertMovie');
+
+
+
+
+
 
 /**
  *  Auth & Registration

@@ -24,19 +24,19 @@ class Movie extends Model
     public function country(){
         return $this->belongsTo('App\Country','country_id');
     }
-    public function diretor(){
-        return $this->belongsTo('App\Person','diretor_id');
-    }
-    public function star1(){
-        return $this->belongsTo('App\Person','star1_id');
-    }
-    public function star2(){
-        return $this->belongsTo('App\Person','star2_id');
-    }
-    public function star3(){
-        return $this->belongsTo('App\Person','star3_id');
-    }
+     public function diretor(){
+         return $this->belongsTo('App\Person','diretor_id');
+     }
+     public function star1(){
+         return $this->belongsTo('App\Person','star1_id');
+     }
+     public function star2(){
+         return $this->belongsTo('App\Person','star2_id');
+     }
+     public function star3(){
+         return $this->belongsTo('App\Person','star3_id');
+     }
     public function author(){
-        return $this->belongsTo('App\Person','author_id');
+        return $this->belongsTo('App\User','author_id');
     }
 }

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="row justify-content-center"><h1>Filmes</h1></div>
+    <div class="row justify-content-center"><h1>Séries</h1></div>
     <div class="container">
 
         <div class="row justify-content-center">
@@ -29,10 +29,10 @@
                                     <p>{{$movie->star2->name}}</p>
                                     <p>{{$movie->star3->name}}</p>
                                     <!--tive problema por causa de os campos tarem a null!!!!!!-->
+
                                     <p>{{$movie->author->name}}</p>
 
-
-
+                                    
 
 
 
