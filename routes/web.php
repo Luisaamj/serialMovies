@@ -16,6 +16,8 @@
  */
 Route::get('/', 'MainController@index')->name('index');
 
+Route::get('/listMovies','MainController@listMovies')->name('listMovies');
+
 /**
  *  Auth & Registration
  */
