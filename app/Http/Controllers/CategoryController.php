@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Http\Requests\CategoryStoreRequest;
 use Illuminate\Http\Request;
+
 
 class CategoryController extends Controller
 {
@@ -37,11 +39,12 @@ class CategoryController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *
+     * @bodyParam name required string max:20 Name of Category
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+
+    public function store(CategoryStoreRequest $request)
     {
         //
         $data=$request->all();
@@ -57,7 +60,7 @@ class CategoryController extends Controller
 
     /**
      * Display the specified resource.
-     *
+     * @bodyParam name required string max:20 Name of Category
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
@@ -80,12 +83,12 @@ class CategoryController extends Controller
 
     /**
      * Update the specified resource in storage.
-     *
+     * @bodyParam name required string max:20 Name of Category
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(CategoryStoreRequest $request, Category $category)
     {
         //
         $data=$request->all();
@@ -102,7 +105,6 @@ class CategoryController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     *
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */

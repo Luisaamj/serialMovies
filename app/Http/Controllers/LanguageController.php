@@ -2,16 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LanguageStoreRequest;
 use App\Language;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class LanguageController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+     * @bodyParam name required string max:10 Name of language
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         //
@@ -36,11 +39,11 @@ class LanguageController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *
+     * @bodyParam name required string max:10 Name of language
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(LanguageStoreRequest $request)
     {
         //
         $data=$request->all();
@@ -55,6 +58,8 @@ class LanguageController extends Controller
 
     /**
      * Display the specified resource.
+     *
+     * @bodyParam name required string max:10 Name of language
      *
      * @param  \App\Language  $language
      * @return \Illuminate\Http\Response
@@ -79,11 +84,13 @@ class LanguageController extends Controller
     /**
      * Update the specified resource in storage.
      *
+     * @bodyParam name required string max:10 Name of language
+     *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Language  $language
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Language $language)
+    public function update(LanguageStoreRequest $request, Language $language)
     {
         //
         $data=$request->all();

@@ -17,20 +17,28 @@
 Route::get('/', 'MainController@index')->name('index');
 
 Route::get('/listMovies','MainController@listMovies')->name('listMovies');
-Route::get('/listSeries','MainController@listSeries')->name('listSeries');
-
-Route::get('/insertMovie','MainController@formMovies')->name('insertFormMovie');
+Route::get('/insertMovie','MainController@formMovie')->name('insertFormMovie');
 Route::post('/insertMovie','MainController@insertMovie')->name('insertMovie');
 
-Route::get('/insertMovie','MainController@formMovies')->name('insertFormMovie');
-Route::post('/insertMovie','MainController@insertMovie')->name('insertMovie');
+Route::get('/editMovie/{id}','MainController@editMovie')->name('editFormMovie');
+Route::put('/updateMovie/{id}/edit','MainController@updateMovie')->name('updateMovie');
 
-Route::get('/insertMovie','MainController@formMovies')->name('insertFormMovie');
-Route::post('/insertMovie','MainController@insertMovie')->name('insertMovie');
+Route::get('/listPeople','MainController@listPeople')->name('listPeople');
+Route::get('/insertPerson','MainController@formPerson')->name('insertFormPerson');
+Route::post('/insertPerson','MainController@insertPerson')->name('insertPerson');
+
+Route::get('/listCategories','MainController@listCategories')->name('listCategories');
+Route::get('/insertCategory','MainController@formCategory')->name('insertFormCategory');
+ Route::post('/insertCategory','MainController@insertCategory')->name('insertCategory');
 
 
+Route::get('/listCountries','MainController@listCountries')->name('listCountries');
+Route::get('/insertCountry','MainController@formCountry')->name('insertFormCountry');
+Route::post('/insertCountry','MainController@insertCountry')->name('insertCountry');
 
-
+Route::get('/listLanguages','MainController@listLanguages')->name('listLanguages');
+Route::get('/insertLanguage','MainController@formLanguage')->name('insertFormLanguage');
+Route::post('/insertLanguage','MainController@insertLanguage')->name('insertLanguage');
 
 
 /**
@@ -52,5 +60,11 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Backoffice', 'middleware' => 
         Route::get('/', 'DashboardController@index')->name('admin');
 
         Route::resource('user', 'UserController');
+
+
     }
 );
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

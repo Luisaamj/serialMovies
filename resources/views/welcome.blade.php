@@ -85,8 +85,8 @@
                 </div>
 
                 <div class="links" >
-                    <a href="" style="font-size:22px;">Movies</a>
-                    <a href="" style="font-size:22px;">Series</a>
+                    <a href="{{ url('/listMovies?id=1') }}" style="font-size:22px;">Movies</a>
+                    <a href="{{ url('/listMovies?id=2') }}" style="font-size:22px;">Series</a>
                 </div>
             </div>
         </div>

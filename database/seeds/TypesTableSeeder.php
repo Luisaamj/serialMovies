@@ -13,11 +13,11 @@ class TypesTableSeeder extends Seeder
     {
         //
         \App\Type::create([
-            'name' => 'Filme'
+            'name' => 'Movie'
         ]);
 
         \App\Type::create([
-            'name' => 'Série'
+            'name' => 'Serie'
         ]);
     }
 }

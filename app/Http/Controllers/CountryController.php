@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Country;
+use App\Http\Requests\CountryStoreRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class CountryController extends Controller
 {
@@ -12,6 +14,7 @@ class CountryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         //
@@ -37,11 +40,12 @@ class CountryController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *
+     * @bodyParam name required string max:10
+     * @bodyParam flag image
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CountryStoreRequest $request)
     {
         //
         $data=$request->all();
@@ -57,7 +61,8 @@ class CountryController extends Controller
 
     /**
      * Display the specified resource.
-     *
+     * @bodyParam name required string max:10 Name of Country
+     * @bodyParam flag image Flag of Country
      * @param  \App\Country  $country
      * @return \Illuminate\Http\Response
      */
@@ -69,7 +74,8 @@ class CountryController extends Controller
 
     /**
      * Show the form for editing the specified resource.
-     *
+     *@bodyParam name required string max:10 Name of Country
+     * @bodyParam flag image Flag of Country
      * @param  \App\Country  $country
      * @return \Illuminate\Http\Response
      */
@@ -80,15 +86,22 @@ class CountryController extends Controller
 
     /**
      * Update the specified resource in storage.
-     *
+     * @bodyParam name required string max:10 Name of Country
+     * @bodyParam flag image Flag of Country
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Country  $country
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Country $country)
+    public function update(CountryStoreRequest $request, Country $country)
     {
         //
         $data=$request->all();
+
+        if($request->hasFile('flag')){
+            $file=$request->file('flag')->store('images');
+
+            $data['flag']=$file;
+        }
 
         $country->update($data);
 
@@ -102,7 +115,7 @@ class CountryController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     *
+
      * @param  \App\Country  $country
      * @return \Illuminate\Http\Response
      */

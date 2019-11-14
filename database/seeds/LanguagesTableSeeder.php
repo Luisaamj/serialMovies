@@ -13,13 +13,13 @@ class LanguagesTableSeeder extends Seeder
     {
         //
         \App\Language::create([
-            'name' => 'Inglês'
+            'name' => 'English'
         ]);
         \App\Language::create([
-            'name' => 'Português'
+            'name' => 'Portuguese'
         ]);
         \App\Language::create([
-            'name' => 'Francês'
+            'name' => 'French'
         ]);
 
     }

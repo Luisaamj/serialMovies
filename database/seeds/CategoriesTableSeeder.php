@@ -13,26 +13,26 @@ class CategoriesTableSeeder extends Seeder
     {
         //
         \App\Category::create([
-            'name' => 'Ação'
+            'name' => 'Action'
         ]);
 
         \App\Category::create([
-            'name' => 'Bibliografia'
+            'name' => 'Bibliography'
         ]);
 
         \App\Category::create([
-            'name' => 'Comédia'
+            'name' => 'Comedy'
         ]);
         \App\Category::create([
             'name' => 'Crime'
         ]);
 
         \App\Category::create([
-            'name' => 'Documentário'
+            'name' => 'Documentary'
         ]);
 
         \App\Category::create([
-            'name' => 'Ficção Científica'
+            'name' => 'Science Fiction'
         ]);
 
         \App\Category::create([
@@ -40,7 +40,7 @@ class CategoriesTableSeeder extends Seeder
         ]);
 
         \App\Category::create([
-            'name' => 'Mistério'
+            'name' => 'Mistery'
         ]);
 
         \App\Category::create([
@@ -48,16 +48,13 @@ class CategoriesTableSeeder extends Seeder
         ]);
 
         \App\Category::create([
-            'name' => 'Suspense'
-        ]);
-
-        \App\Category::create([
-            'name' => 'Terror'
-        ]);
-
-        \App\Category::create([
             'name' => 'Thriller'
         ]);
+
+        \App\Category::create([
+            'name' => 'Horror'
+        ]);
+
 
 
 

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PersonStoreRequest;
 use App\Person;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class PersonController extends Controller
 {
@@ -43,7 +45,7 @@ class PersonController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PersonStoreRequest $request)
     {
         //
         $data=$request->all();
@@ -92,10 +94,16 @@ class PersonController extends Controller
      * @param  \App\Person  $person
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Person $person)
+    public function update(PersonStoreRequest $request, Person $person)
     {
         //
         $data=$request->all();
+
+        if($request->hasFile('image')){
+            $file=$request->file('image')->store('images');
+
+            $data['image']=$file;
+        }
 
         $person->update($data);
 

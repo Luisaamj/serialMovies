@@ -17,19 +17,19 @@ class CountriesTableSeeder extends Seeder
             'flag' => 'pt'
         ]);
         \App\Country::create([
-            'name' => 'Espanha',
+            'name' => 'Spain',
             'flag' => 'es'
         ]);
         \App\Country::create([
-            'name' => 'França',
+            'name' => 'France',
             'flag' => 'fr'
         ]);
         \App\Country::create([
-            'name' => 'Estados Unidos da América',
+            'name' => 'United States of America',
             'flag' => 'EUA'
         ]);
         \App\Country::create([
-            'name' => 'Reino Unido',
+            'name' => 'United Kingdom',
             'flag' => 'uk'
         ]);
     }
